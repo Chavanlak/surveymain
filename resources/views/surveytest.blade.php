@@ -12,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" media="all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)" href="ipad-portrait.css" />
     <link rel="stylesheet" media="all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)" href="ipad-landscape.css" />
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans Thai' rel='stylesheet'>
 
     <title>Food Feedback Survey</title>
     <style>
@@ -20,6 +21,7 @@
             color: aliceblue;
             margin: 20px;
             padding-left: 15px;
+            font-family: 'Noto Sans Thai';
         }
 
         .emoji {
@@ -73,12 +75,12 @@
         <p class="text-center my-4 text-white"style="font-family:'Kanit', sans-serif;  font-size: 20px;">เเบบประเมินความพึงพอใจ</p> --}}
         <div class="d-flex align-items-center my-4">
             <img src="{{ asset('images/logofuji.png') }}" alt="Logo" style="width: 50px; height: auto; margin-right: 10px;">
-            <p class="text-white mb-0" style="font-family:'Kanit', sans-serif; font-size: 20px;">
+            <p class="text-white mb-0" style="font-size: 20px;">
                 แบบประเมินความพึงพอใจ
             </p>
         </div>
-        
         <form action="/surveytest" method="POST">
+        {{-- <form action="/surveymain/public/surveytest" method="POST"> --}}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <!-- Branch Select -->
@@ -128,11 +130,16 @@
                     <option class="emoji" value="5">😍</option>
                 </select> --}}
                 <div class="emoji-group">
-                    <img src="{{ asset('images/Emoji_01.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
+                    <img src="{{ asset('images/angry.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
+                    <img src="{{ asset('images/sad.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
+                    <img src="{{ asset('images/notbad.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
+                    <img src="{{ asset('images/good.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
+                    <img src="{{ asset('images/happy.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
+                    {{-- <img src="{{ asset('images/Emoji_01.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
                     <img src="{{ asset('images/Emoji_02.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
                     <img src="{{ asset('images/Emoji_03.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
                     <img src="{{ asset('images/Emoji_04.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_05.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
+                    <img src="{{ asset('images/Emoji_05.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40"> --}}
                     {{-- <div class="emoji" data-value="1" onclick="addScore('ans1',1)">😡</div> --}}
                     {{-- <div class="emoji" data-value="2" onclick="addScore('ans1',2)">😞</div> --}}
                     {{-- <div class="emoji" data-value="3" onclick="addScore('ans1',3)">😐</div>
@@ -157,11 +164,11 @@
                     <option class="emoji" value="5">😍</option>
                 </select> --}}
                 <div class="emoji-group">
-                    <img src="{{ asset('images/Emoji_01.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_02.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_03.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_04.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_05.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
+                    <img src="{{ asset('images/angry.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
+                    <img src="{{ asset('images/sad.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
+                    <img src="{{ asset('images/notbad.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
+                    <img src="{{ asset('images/good.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
+                    <img src="{{ asset('images/happy.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
                     {{-- <div class="emoji" data-value="1" onclick="addScore('ans2',1)">😡</div>
                     <div class="emoji" data-value="2" onclick="addScore('ans2',2)">😞</div>
                     <div class="emoji" data-value="3" onclick="addScore('ans2',3)">😐</div>
@@ -186,11 +193,11 @@
                     <option class="emoji" value="5">😍</option>
                 </select> --}}
                 <div class="emoji-group">
-                    <img src="{{ asset('images/Emoji_01.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_02.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_03.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_04.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_05.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
+                    <img src="{{ asset('images/angry.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
+                    <img src="{{ asset('images/sad.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
+                    <img src="{{ asset('images/notbad.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
+                    <img src="{{ asset('images/good.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
+                    <img src="{{ asset('images/happy.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
                     {{-- <div class="emoji" data-value="1" onclick="addScore('ans3',1)">😡</div>
                     <div class="emoji" data-value="2" onclick="addScore('ans3',2)">😞</div>
                     <div class="emoji" data-value="3" onclick="addScore('ans3',3)">😐</div>
@@ -215,11 +222,11 @@
                     <option class="emoji" value="5">😍</option>
                 </select> --}}
                 <div class="emoji-group">
-                    <img src="{{ asset('images/Emoji_01.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_02.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_03.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_04.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
-                    <img src="{{ asset('images/Emoji_05.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
+                    <img src="{{ asset('images/angry.png') }}" class="emoji" data-value="1" onclick="addScore('ans1',1)" width="40" height="40">
+                    <img src="{{ asset('images/sad.png') }}" class="emoji" data-value="2" onclick="addScore('ans1',2)" width="40" height="40">
+                    <img src="{{ asset('images/notbad.png') }}" class="emoji" data-value="3" onclick="addScore('ans1',3)" width="40" height="40">
+                    <img src="{{ asset('images/good.png') }}" class="emoji" data-value="4" onclick="addScore('ans1',4)" width="40" height="40">
+                    <img src="{{ asset('images/happy.png') }}" class="emoji" data-value="5" onclick="addScore('ans1',5)" width="40" height="40">
                     {{-- <div class="emoji" data-value="1" onclick="addScore('ans4',1)">😡</div>
                     <div class="emoji" data-value="2" onclick="addScore('ans4',2)">😞</div>
                     <div class="emoji" data-value="3" onclick="addScore('ans4',3)">😐</div>
