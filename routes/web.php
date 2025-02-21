@@ -13,6 +13,9 @@ use SimpleSoftwareIO\Qrcode\Facades\Qrcode;
 Route::get('/',[AnswerController::class,'pull']);
 Route::post('/surveytest',[AnswerController::class,'getInfoTorate']);
 
+Route::get('/thankyou', function () {
+    return view('thankyou');
+});
 
 
 // Route::get('/surveyform',[AnswerController::class,'pull']);
